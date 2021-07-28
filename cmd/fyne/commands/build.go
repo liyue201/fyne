@@ -30,6 +30,7 @@ func (b *builder) build() error {
 		} else {
 			args = append(args, "-ldflags", "-H=windowsgui")
 		}
+		args = append(args, "-buildmode=exe")
 	} else {
 		if goos == "darwin" {
 			env = append(env, "CGO_CFLAGS=-mmacosx-version-min=10.11")
